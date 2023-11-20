@@ -2,8 +2,8 @@ import { SapphireClient } from "@sapphire/framework";
 import { EmbedBuilder } from "discord.js";
 
 export default class embeds {
-    client: SapphireClient;
-    embed: EmbedBuilder;
+    private client: SapphireClient;
+    private embed: EmbedBuilder;
 
 
     constructor(client: SapphireClient) {
