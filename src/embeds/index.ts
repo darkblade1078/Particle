@@ -32,4 +32,14 @@ export default class embeds {
 
         return this.embed;
     }
+
+    image(image: string): EmbedBuilder {
+
+        this.embed
+            .setImage(image)
+            .setColor('Blurple')
+            .setFooter({ text: `Powered by ${this.client.user?.username}`, iconURL: `${this.client.user?.avatarURL()}` });
+
+        return this.embed;
+    }
 }

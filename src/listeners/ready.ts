@@ -1,5 +1,6 @@
 import { Listener } from '@sapphire/framework';
 import { ActivityType, type Client } from 'discord.js';
+import databaseUtils from '../utils/database';
 
 export class ReadyListener extends Listener {
 
@@ -11,10 +12,16 @@ export class ReadyListener extends Listener {
         });
     }
 
-    public run(client: Client): void {
-        const { logger } = this.container;
+    public async run(client: Client): Promise<void> {
+        const { logger} = this.container;
         const { username, id } = client.user!;
         logger.info(`Successfully logged in as ${username} (${id})`);
+
+        //initialize database utils
+        const utils = new databaseUtils(this.container);
+
+        //initialize servers database
+        await utils.initializeServersDatabase();
 
         //set bot activity
         client.user?.setActivity(`${client.guilds.cache.size} servers`, {

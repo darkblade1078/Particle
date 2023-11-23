@@ -11,6 +11,14 @@
   "dependencies": {
     "@sapphire/framework": "^4.8.2",
     "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.6",
+    "superagent": "^8.1.2",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.2",
+    "@types/superagent": "^4.1.22"
   }
 }
